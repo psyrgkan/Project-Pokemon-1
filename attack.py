@@ -17,16 +17,3 @@ class Attack:
         self.damage = damage
         self.tipo = tipo
         self.pores = pores
-
-       
-thdrblt = Attack(40, "Electric" , 1)
-
-
-
-
-    
-
-
-
-
-
