@@ -5,6 +5,7 @@ This is the main python file where the logic and practice for the fight simulato
 from attack import Attack
 from pokemon import Pokemon
 import random
+import copy
 
 
 # Create Attacks and Pokemon
@@ -57,19 +58,19 @@ pkm0 = None
 pkm1 = None
 
 while pkm0 == None:
-    pkm0name = input("Player 1, choose your fighter: ").lower()
+    pkm0name = input("Player 1, enter a valid fighter: ").lower()
 
     for i in pokelist:
         if pkm0name == i.name.lower():
-            pkm0 = i
+            pkm0 = copy.deepcopy(i)
             break
 
 while pkm1 == None:
-    pkm1name = input("Player 2, choose your fighter: ").lower()
+    pkm1name = input("Player 2, enter a valid fighter: ").lower()
 
     for i in pokelist:
         if pkm1name == i.name.lower():
-            pkm1 = i
+            pkm1 = copy.deepcopy(i)
             break
 
 for i in range(4):
@@ -86,3 +87,44 @@ for i in range(4):
 
 print(pkm1.name + " has the following moves:")
 print([i.name for i in pkm1.moveset])
+
+while pkm0.hp > 0 and pkm1.hp > 0:
+    # player1 picks attack
+    att0 = None
+    att1 = None
+
+    while att0 == None:
+        att0name = input("Player 1 pick a valid move: ").lower()
+
+        for i in pkm0.moveset:
+            if att0name == i.name.lower():
+                att0 = i
+                break
+
+    while att1 == None:
+        att1name = input("Player 2 pick a valid move: ").lower()
+
+        for i in pkm1.moveset:
+            if att1name == i.name.lower():
+                att1 = i
+                break
+
+    if pkm0.stats[5] > pkm1.stats[5]:
+        pkm1.hp -= att0.damage
+        if pkm1.hp <= 0:
+            break
+        pkm0.hp -= att1.damage
+    else:
+        pkm0.hp -= att1.damage
+        if pkm0.hp <= 0:
+            break
+        pkm1.hp -= att0.damage
+
+    if pkm0.hp >0 and pkm1.hp > 0:
+        print(pkm0.hp)
+        print(pkm1.hp)
+
+if pkm0.hp < 0:
+    print("Winner is " + pkm1.name)
+else:
+    print("Winner is " + pkm0.name)
