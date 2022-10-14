@@ -50,8 +50,6 @@ pokelist = [bulbasaur, charmander, squirtle, pidgeot, rattata, pikachu, jigglypu
 
 # Main code logic
 
-player_counter = 0
-
 print([i.name for i in pokelist])
 
 pkm0 = None
@@ -77,7 +75,7 @@ for i in range(4):
     rand_idx = random.randrange(len(pkm0.allmoves))
     pkm0.moveset.append(pkm0.allmoves.pop(rand_idx))
 
-print(pkm0.name + " has the following moves:")
+print("\n"+pkm0.name + " has the following moves:")
 print([i.name for i in pkm0.moveset])
     
 
@@ -94,7 +92,7 @@ while pkm0.hp > 0 and pkm1.hp > 0:
     att1 = None
 
     while att0 == None:
-        att0name = input("Player 1 pick a valid move: ").lower()
+        att0name = input("\n"+"Player 1 pick a valid move: ").lower()
 
         for i in pkm0.moveset:
             if att0name == i.name.lower():
@@ -110,6 +108,8 @@ while pkm0.hp > 0 and pkm1.hp > 0:
                 break
 
     if pkm0.stats[5] > pkm1.stats[5]:
+        # damage = ...
+        # pkm1.hp -= damage
         pkm1.hp -= att0.damage
         if pkm1.hp <= 0:
             break
@@ -121,10 +121,17 @@ while pkm0.hp > 0 and pkm1.hp > 0:
         pkm1.hp -= att0.damage
 
     if pkm0.hp >0 and pkm1.hp > 0:
-        print(pkm0.hp)
-        print(pkm1.hp)
+        print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp))
+        print(pkm1.name + " has remaining HP: " + str(pkm1.hp))
+        print("_________________________________________________")
+        print("\n"+pkm0.name + " has the following moves:")
+        print([i.name for i in pkm0.moveset])
+        print(pkm1.name + " has the following moves:")
+        print([i.name for i in pkm1.moveset])
+
+
 
 if pkm0.hp < 0:
-    print("Winner is " + pkm1.name)
+    print("Winner is " + pkm1.name + "!")
 else:
-    print("Winner is " + pkm0.name)
+    print("Winner is " + pkm0.name + "!")
