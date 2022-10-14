@@ -1,0 +1,104 @@
+
+print([i.name for i in pokelist]) # we want to print every sigle pokemon in the list we'be created before.
+
+pkm0 = None
+pkm1 = None  # we don't have any pokemon yet
+
+while pkm0 == None:
+    pkm0name = input("Player 1, enter a valid fighter: ").lower()
+
+    for i in pokelist:
+        if pkm0name == i.name.lower():
+            pkm0 = copy.deepcopy(i)  #to make a copy and be able to the second player to reuse the same pokemon
+            break
+
+while pkm1 == None:
+    pkm1name = input("Player 2, enter a valid fighter: ").lower()
+
+    for i in pokelist:
+        if pkm1name == i.name.lower():
+            pkm1 = copy.deepcopy(i)
+            break
+
+for i in range(4):    #for take randome moves in every pokemon chose
+    rand_idx = random.randrange(len(pkm0.allmoves))
+    pkm0.moveset.append(pkm0.allmoves.pop(rand_idx))   #we pop each element from the list all moves to not repet the attacks in the new list where we are appending in moveset 
+
+print("\n"+pkm0.name + " has the following moves:")  #printing the pk name 0 with the 
+print([i.name for i in pkm0.moveset])                 # attacks append in the moveset 
+    
+
+for i in range(4):
+    rand_idx = random.randrange(len(pkm1.allmoves))  
+    pkm1.moveset.append(pkm1.allmoves.pop(rand_idx))
+
+print(pkm1.name + " has the following moves:")
+print([i.name for i in pkm1.moveset])
+
+#START THE FIGHT
+
+
+while pkm0.hp > 0 and pkm1.hp > 0:    #while the ph of the pkm0 is greater than 0 and same for pkm1, make a while loop until the user choose a move from the list we created before
+    # player1 picks attack
+    att0 = None
+    att1 = None
+
+    while att0 == None:
+        att0name = input("\n"+"Player 1 pick a valid move: ").lower()
+
+        for i in pkm0.moveset:
+            if att0name == i.name.lower():    #if the attack matches with the name of the attack in the moveset (list of attacks), break the loop and go with the second player 
+                att0 = i
+                break
+
+    while att1 == None:
+        att1name = input("Player 2 pick a valid move: ").lower()
+
+        for i in pkm1.moveset:
+            if att1name == i.name.lower():
+                att1 = i
+                break
+
+    if pkm0.stats[5] > pkm1.stats[5]:   #if the speed of the pkm0 is greater than the speed of the pkm1, pkm0 start first
+        # damage = ...
+        # pkm1.hp -= damage
+        pkm1.hp -= att0.damage  # rest the damage of the attack from the pkm0 to the hp of the pkm1
+        if pkm1.hp <= 0:            # if the ph of the pkm1 is lower than 0, break the loop bc we have a winner
+            break
+        pkm0.hp -= att1.damage          #if the ph of the pkm1 is not lower than 0, we continue this fight bc the second player has to attack too
+    else:
+        pkm0.hp -= att1.damage
+        if pkm0.hp <= 0:
+            break
+        pkm1.hp -= att0.damage
+
+    if pkm0.hp >0 and pkm1.hp > 0:
+        print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp))   #to remember the players how much HP is remaining per pkm
+        print(pkm1.name + " has remaining HP: " + str(pkm1.hp))
+        print("_________________________________________________")
+        print("\n"+pkm0.name + " has the following moves:")     # to remember the playaers which attacks they have
+        print([i.name for i in pkm0.moveset])
+        print(pkm1.name + " has the following moves:")
+        print([i.name for i in pkm1.moveset])
+
+
+
+if pkm0.hp < 0:
+    print("Winner is " + pkm1.name + "!")
+else:
+    print("Winner is " + pkm0.name + "!")
+
+
+
+
+
+
+FROM POKEMON 
+
+   def __init__(self, name: str, stats: list, tipo: str, attacks: list[Attack] = []):
+        self.name = name
+        self.stats = stats
+        self.tipo = tipo
+        self.hp = stats[0]
+        self.allmoves = attacks
+        self.moveset = []  # a lsit to append the moves chosen randomly 
