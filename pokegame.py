@@ -48,90 +48,114 @@ dragonite = Pokemon('Dragonite', [151, 125, 90, 94, 94, 76 ], 'dragon', [outrage
 
 pokelist = [bulbasaur, charmander, squirtle, pidgeot, rattata, pikachu, jigglypuff, abra, snorlax, dragonite]
 
+def calculate_dmg(att: Attack, pkm_att: Pokemon, pkm_def: Pokemon):
+    dmg = ((2*50/5) + 2) * att.damage 
+
+    if att.pores == 0:
+        dmg = (dmg * pkm_att.stats[1] / pkm_def.stats[2])/50 + 2
+
+    if att.pores == 1:
+        dmg = (dmg * pkm_att.stats[3] /pkm_def.stats[4])/50 + 2
+
+    if att.tipo.lower() == pkm_att.tipo.lower():
+        dmg = dmg * 1.5
+
+    dmg = dmg * random.randrange(217, 255) /255
+    return int(dmg)
+
 # Main code logic
 
-print([i.name for i in pokelist])
+if __name__ == '__main__': 
+    print([i.name for i in pokelist])
 
-pkm0 = None
-pkm1 = None
+    pkm0 = None
+    pkm1 = None
 
-while pkm0 == None:
-    pkm0name = input("Player 1, enter a valid fighter: ").lower()
+    while pkm0 == None:
+        pkm0name = input("Player 1, enter a valid fighter: ").lower()
 
-    for i in pokelist:
-        if pkm0name == i.name.lower():
-            pkm0 = copy.deepcopy(i)
-            break
-
-while pkm1 == None:
-    pkm1name = input("Player 2, enter a valid fighter: ").lower()
-
-    for i in pokelist:
-        if pkm1name == i.name.lower():
-            pkm1 = copy.deepcopy(i)
-            break
-
-for i in range(4):
-    rand_idx = random.randrange(len(pkm0.allmoves))
-    pkm0.moveset.append(pkm0.allmoves.pop(rand_idx))
-
-print("\n"+pkm0.name + " has the following moves:")
-print([(i.name, i.damage) for i in pkm0.moveset])
-    
-
-for i in range(4):
-    rand_idx = random.randrange(len(pkm1.allmoves))
-    pkm1.moveset.append(pkm1.allmoves.pop(rand_idx))
-
-print(pkm1.name + " has the following moves:")
-print([(i.name, i.damage) for i in pkm1.moveset])
-
-while pkm0.hp > 0 and pkm1.hp > 0:
-    # player1 picks attack
-    att0 = None
-    att1 = None
-
-    while att0 == None:
-        att0name = input("\n"+"Player 1 pick a valid move: ").lower()
-
-        for i in pkm0.moveset:
-            if att0name == i.name.lower():
-                att0 = i
+        for i in pokelist:
+            if pkm0name == i.name.lower():
+                pkm0 = copy.deepcopy(i)
                 break
 
-    while att1 == None:
-        att1name = input("Player 2 pick a valid move: ").lower()
+    while pkm1 == None:
+        pkm1name = input("Player 2, enter a valid fighter: ").lower()
 
-        for i in pkm1.moveset:
-            if att1name == i.name.lower():
-                att1 = i
+        for i in pokelist:
+            if pkm1name == i.name.lower():
+                pkm1 = copy.deepcopy(i)
                 break
 
-    if pkm0.stats[5] > pkm1.stats[5]:
-        # damage = ...
-        # pkm1.hp -= damage
-        pkm1.hp -= att0.damage
-        if pkm1.hp <= 0:
-            break
-        pkm0.hp -= att1.damage
+    for i in range(4):
+        rand_idx = random.randrange(len(pkm0.allmoves))
+        pkm0.moveset.append(pkm0.allmoves.pop(rand_idx))
+
+    print("\n"+pkm0.name + " has the following moves:")
+    print([(i.name, i.damage) for i in pkm0.moveset])
+        
+
+    for i in range(4):
+        rand_idx = random.randrange(len(pkm1.allmoves))
+        pkm1.moveset.append(pkm1.allmoves.pop(rand_idx))
+
+    print(pkm1.name + " has the following moves:")
+    print([(i.name, i.damage) for i in pkm1.moveset])
+
+    while pkm0.hp > 0 and pkm1.hp > 0:
+        # player1 picks attack
+        att0 = None
+        att1 = None
+
+        while att0 == None:
+            att0name = input("\n"+"Player 1 pick a valid move: ").lower()
+
+            for i in pkm0.moveset:
+                if att0name == i.name.lower():
+                    att0 = i
+                    break
+
+        while att1 == None:
+            att1name = input("Player 2 pick a valid move: ").lower()
+
+            for i in pkm1.moveset:
+                if att1name == i.name.lower():
+                    att1 = i
+                    break
+
+        if pkm0.stats[5] > pkm1.stats[5]:
+            # damage = ...
+            # pkm1.hp -= damage
+            dmg0 = calculate_dmg(att0, pkm0, pkm1)
+            pkm1.hp -= dmg0
+            if pkm1.hp <= 0:
+                break
+            dmg1 = calculate_dmg(att1, pkm1, pkm0)
+            pkm0.hp -= dmg1
+            print(dmg0)
+            print(dmg1)
+        else:
+            dmg1 = calculate_dmg(att1, pkm1, pkm0)
+            pkm0.hp -= dmg1
+            if pkm0.hp <= 0:
+                break
+            dmg0 = calculate_dmg(att0, pkm0, pkm1)
+            pkm1.hp -= dmg0
+            print(dmg0)
+            print(dmg1)
+
+        if pkm0.hp >0 and pkm1.hp > 0:
+            print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp))
+            print(pkm1.name + " has remaining HP: " + str(pkm1.hp))
+            print("_________________________________________________")
+            print("\n"+pkm0.name + " has the following moves:")
+            print([i.name for i in pkm0.moveset])
+            print(pkm1.name + " has the following moves:")
+            print([i.name for i in pkm1.moveset])
+
+
+
+    if pkm0.hp < 0:
+        print("Winner is " + pkm1.name + "!")
     else:
-        pkm0.hp -= att1.damage
-        if pkm0.hp <= 0:
-            break
-        pkm1.hp -= att0.damage
-
-    if pkm0.hp >0 and pkm1.hp > 0:
-        print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp))
-        print(pkm1.name + " has remaining HP: " + str(pkm1.hp))
-        print("_________________________________________________")
-        print("\n"+pkm0.name + " has the following moves:")
-        print([i.name for i in pkm0.moveset])
-        print(pkm1.name + " has the following moves:")
-        print([i.name for i in pkm1.moveset])
-
-
-
-if pkm0.hp < 0:
-    print("Winner is " + pkm1.name + "!")
-else:
-    print("Winner is " + pkm0.name + "!")
+        print("Winner is " + pkm0.name + "!")
