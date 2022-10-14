@@ -15,3 +15,4 @@ jigglypuff = Pokemon([175, 45, 22, 45, 27, 22], 'normal')
 abra = Pokemon([85, 22, 18, 99, 54, 85], 'psychic')
 snorlax = Pokemon([220, 103, 63, 63, 103, 31 ], 'normal')
 dragonite = Pokemon([151, 125, 90, 94, 94, 76 ], 'dragon')
+    
