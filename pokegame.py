@@ -7,6 +7,7 @@ from pokemon import Pokemon
 
 
 
+
 thunderpunch = Attack('Thunder Punch', 75, "Electric" , 0)
 quickattack = Attack('Quick Attack', 40, "Normal" , 0)
 megakick = Attack('Megakick', 120, "Normal" , 0)
@@ -27,10 +28,10 @@ lick = Attack('Lick', 30, "Ghost", 0)
 disarmingvoice = Attack('Disarming Voice', 40, "Fairy", 1)
 pound = Attack('Pound', 40, "Normal", 0)
 icepunch = Attack('Ice Punch', 75, "Ice", 0)
-drainpunch = Attack(75, "Fighting", 0)
-extremespeed = Attack(80, "Normal", 0)
-dragontail = Attack(60, "Dragon", 0)
-outrage = Attack(120, "Dragon", 0)
+drainpunch = Attack("Drain puch", 75, "Fighting", 0)
+extremespeed = Attack("Extreme speed", 80, "Normal", 0)
+dragontail = Attack("Dragon tail", 60, "Dragon", 0)
+outrage = Attack("Out rage" , 120, "Dragon", 0)
 
 
 
@@ -39,9 +40,10 @@ charmander = Pokemon([99, 51, 43, 58, 49, 63], 'fire', [firepunch, flamethrower,
 squirtle = Pokemon([104, 47, 63, 49, 62, 43], 'water', [dive, quickattack, watergun, covet, icepunch])
 pidgeot = Pokemon([143, 76, 72, 67, 67, 86], 'flying', [quickattack, hurricane, wingattack, aerialace, pound])
 rattata = Pokemon([90, 54, 36, 27, 36, 69], 'normal', [quickattack, tackle, assurance, covet, extremespeed])
-pikachu = Pokemon([95, 54, 31, 49, 40, 85], 'electric')
-jigglypuff = Pokemon([175, 45, 22, 45, 27, 22], 'normal')
-abra = Pokemon([85, 22, 18, 99, 54, 85], 'psychic')
-snorlax = Pokemon([220, 103, 63, 63, 103, 31 ], 'normal')
-dragonite = Pokemon([151, 125, 90, 94, 94, 76 ], 'dragon')
+pikachu = Pokemon([95, 54, 31, 49, 40, 85], 'electric',[thunderpunch,quickattack,outrage,hurricane,megakick,magicleaf,disarmingvoice])
+jigglypuff = Pokemon([175, 45, 22, 45, 27, 22], 'normal',[tackle,assurance,flamethrower,quickattack,hurricane,tackle])
+abra = Pokemon([85, 22, 18, 99, 54, 85], 'psychic',[disarmingvoice,assurance,tackle,wingattack,quickattack,lick])
+snorlax = Pokemon([220, 103, 63, 63, 103, 31 ], 'normal', [pound,covet,tackle,megakick,gigaimpact,hurricane,outrage])
+dragonite = Pokemon([151, 125, 90, 94, 94, 76 ], 'dragon', [outrage,gigaimpact,pound,covet,dragontail,magicleaf])
+
     
