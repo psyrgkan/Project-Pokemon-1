@@ -8,7 +8,7 @@ class Attack:
 
      damage: takes in int  
 
-     the tipo: takes in a str
+     tipo: takes in a str
 
      pores: takes a int where pores = 0 if it's physical or pores = 1 if it's special  """
 
@@ -17,16 +17,4 @@ class Attack:
         self.damage = damage
         self.tipo = tipo
         self.pores = pores
-
-       
-thdrblt = Attack(40, "Electric" , 1)
-
-
-
-
-    
-
-
-
-
 
