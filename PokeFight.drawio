@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-14T09:13:39.262Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="q100uHbldzR0q_pJHP0_" version="20.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-14T09:18:23.409Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="rBK8VTvLwp7QUudwnaFh" version="20.4.0" type="github">
   <diagram id="XxieVzkdwiMo6nqb6jkK" name="Page-1">
     <mxGraphModel dx="1051" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -32,6 +32,14 @@
         </mxCell>
         <mxCell id="fHhEs9VGLyoYJjRyogGl-7" value="Ask Pokemons" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
           <mxGeometry x="470" y="170" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fHhEs9VGLyoYJjRyogGl-46" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;fillColor=#f8cecc;" edge="1" parent="1" source="fHhEs9VGLyoYJjRyogGl-11" target="fHhEs9VGLyoYJjRyogGl-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="200" />
+              <mxPoint x="620" y="200" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="fHhEs9VGLyoYJjRyogGl-11" value="Not PKM" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="650" y="180" width="70" height="40" as="geometry" />
@@ -91,6 +99,15 @@
         </mxCell>
         <mxCell id="fHhEs9VGLyoYJjRyogGl-43" value="&lt;b&gt;Winner&lt;/b&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="492.5" y="630" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fHhEs9VGLyoYJjRyogGl-45" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="fHhEs9VGLyoYJjRyogGl-7" target="fHhEs9VGLyoYJjRyogGl-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="250" />
+              <mxPoint x="600" y="250" />
+              <mxPoint x="600" y="215" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
