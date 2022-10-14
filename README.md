@@ -3,7 +3,7 @@
 # Project-Pokemon-1
 *Project between Panos and Jaime creating a pokemon fight simulator*
 
-*[DAFT2022, Paris & 14/10/2022]*
+*DAFT2022, Paris, 14/10/2022*
 
 ## Content
 - [Project Description](#project-description)
