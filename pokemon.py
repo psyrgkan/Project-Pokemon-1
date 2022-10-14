@@ -8,6 +8,8 @@ class Pokemon:
     '''
     Class takes in:
 
+    name: str: name of pokemon
+
     stats: list[int]: in list format where stats[0] is HP, stats[1] is Attack, stats[2] is Defence,
             stats[3] is Special Attack, stats[4] is Special Defence and stats[5] is Speed
 
@@ -15,7 +17,8 @@ class Pokemon:
 
     attacks: list[Attack]: gives the list of all possible attacks a pokemon can learn
     '''
-    def __init__(self, stats: list, tipo: str, attacks: list[Attack] = []):
+    def __init__(self, name: str, stats: list, tipo: str, attacks: list[Attack] = []):
+        self.name = name
         self.stats = stats
         self.tipo = tipo
         self.hp = stats[0]
