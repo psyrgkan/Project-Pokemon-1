@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" modified="2022-10-14T09:18:27.922Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15" etag="-uu1ItX9LB7v7jaCzXV6" version="20.4.0" type="github">
+  <diagram id="kKuz-zXTy_C94DdV4qDN" name="Page-1">
+    <mxGraphModel dx="946" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-1" target="EpOuqj8xxb8qc7j5l1Ul-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-1" target="EpOuqj8xxb8qc7j5l1Ul-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-1" value="Pokémon" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-2" value="Attacks" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="190" y="50" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.183;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-5" target="EpOuqj8xxb8qc7j5l1Ul-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-5" value="Start game" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="490" y="50" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-6" target="EpOuqj8xxb8qc7j5l1Ul-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-25" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-6" target="EpOuqj8xxb8qc7j5l1Ul-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-6" value="Ask Pokemon" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="490" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-46" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-11" target="EpOuqj8xxb8qc7j5l1Ul-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-11" value="Not PKM" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="650" y="185" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-34" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-17" target="EpOuqj8xxb8qc7j5l1Ul-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-17" value="List of&amp;nbsp;&lt;br&gt;attacks" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="505" y="280" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-20" target="EpOuqj8xxb8qc7j5l1Ul-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-38" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-20" target="EpOuqj8xxb8qc7j5l1Ul-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-20" value="Pick attacks" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="490" y="420" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-28" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-22" target="EpOuqj8xxb8qc7j5l1Ul-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-22" value="Creating PKM Object with 4 random attacks&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-41" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-29" target="EpOuqj8xxb8qc7j5l1Ul-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-29" value="Calculate damage and HP" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="280" y="490" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-30" value="Not attack" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="650" y="425" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-35" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.51;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-33" target="EpOuqj8xxb8qc7j5l1Ul-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-33" value="Fight!" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="510" y="360" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-42" value="PH &amp;gt; 0" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-40" target="EpOuqj8xxb8qc7j5l1Ul-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-44" value="PH &amp;lt;= 0" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-40" target="EpOuqj8xxb8qc7j5l1Ul-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-40" value="HP" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="512.5" y="540" width="55" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-43" value="&lt;b&gt;Winner&lt;/b&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="496.25" y="640" width="87.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EpOuqj8xxb8qc7j5l1Ul-47" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#666666;dashed=1;fillColor=#f5f5f5;" edge="1" parent="1" source="EpOuqj8xxb8qc7j5l1Ul-6" target="EpOuqj8xxb8qc7j5l1Ul-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="260" />
+              <mxPoint x="620" y="260" />
+              <mxPoint x="620" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
