@@ -18,16 +18,3 @@ class Attack:
         self.tipo = tipo
         self.pores = pores
 
-       
-
-
-
-
-
-
-    
-
-
-
-
-
