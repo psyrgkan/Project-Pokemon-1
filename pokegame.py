@@ -132,8 +132,6 @@ if __name__ == '__main__':
                 break
             dmg1 = calculate_dmg(att1, pkm1, pkm0)
             pkm0.hp -= dmg1
-            print(dmg0)
-            print(dmg1)
         else:
             dmg1 = calculate_dmg(att1, pkm1, pkm0)
             pkm0.hp -= dmg1
@@ -141,8 +139,6 @@ if __name__ == '__main__':
                 break
             dmg0 = calculate_dmg(att0, pkm0, pkm1)
             pkm1.hp -= dmg0
-            print(dmg0)
-            print(dmg1)
 
         if pkm0.hp >0 and pkm1.hp > 0:
             print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp))
