@@ -39,6 +39,6 @@ The repository contains the flowchart that we used for the game data and logic, 
 Include links to your repository, slides and kanban board. Feel free to include any other links associated with your project.
 ![flowchart](PokeFight.jpg)
 
-[Repository](https://github.com/)  
-[Slides](https://slides.com/)  
-[Trello](https://trello.com/en)  
+[Repository1](https://github.com/psyrgkan/Project-Pokemon-1)
+[Repository2](https://github.com/JaimeSastreCrespo/Project-Pokemon-1)
+[Slides](https://docs.google.com/presentation/d/1JMoo-5nwYY0bx6m4fmU7v8BBTCZGOrH8XzMBtYG7hK8/edit?usp=sharing)  
