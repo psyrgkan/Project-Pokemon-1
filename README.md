@@ -40,5 +40,7 @@ Include links to your repository, slides and kanban board. Feel free to include 
 ![flowchart](PokeFight.jpg)
 
 [Repository1](https://github.com/psyrgkan/Project-Pokemon-1)
+
 [Repository2](https://github.com/JaimeSastreCrespo/Project-Pokemon-1)
+
 [Slides](https://docs.google.com/presentation/d/1JMoo-5nwYY0bx6m4fmU7v8BBTCZGOrH8XzMBtYG7hK8/edit?usp=sharing)  
