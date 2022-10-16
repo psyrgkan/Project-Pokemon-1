@@ -13,21 +13,31 @@
 - [Links](#links)
 
 ## Project Description
-Write a short description of your project. Write 1-2 sentences about the game you chose to build and why.
+Two players, who each one choose a pokémon from a list of them given beforehand to fight.
+Right after, the fight starts and the players will be asked to pick an attack.
+The players will be fighting until one of the pokemon is dead, so we will have a winner!	
+
+We chose this game based on nostalgia!
 
 ## Rules
-Briefly describe the rules of the game.
+Each player has to pick a pokemon out of the list of available pokemon (for the time being). And one of the moves that they are given.
 
 ## Workflow
-Outline the workflow you used in your project. What are the steps you went through?
+JIRA planning
+GitHub set up
+Flowchart and pseudocode preparation
+Started coding the classes, then the basic game logic, and then some extra features, such as advance damage calculation and type effectiveness.
 
 ## Organization
-How did you organize your work? Did you use any tools like a kanban board?
+We used Sprints in JIRA and two GitHub repositories. We each updated our progress on JIRA and respectivelly pushed and pulled from our branches into 
+each our main repositories and then created pull requests into the others.
 
-What does your repository look like? Explain your folder and file structure.
+The repository contains the flowchart that we used for the game data and logic, as well as the two main classes that we used to make the fight possible.
 
 ## Links
+
 Include links to your repository, slides and kanban board. Feel free to include any other links associated with your project.
+![flowchart](PokeFight.jpg)
 
 [Repository](https://github.com/)  
 [Slides](https://slides.com/)  
