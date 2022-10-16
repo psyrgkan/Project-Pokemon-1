@@ -76,6 +76,9 @@ dragonite = Pokemon('Dragonite', [151, 125, 90, 94, 94, 76 ], 'Dragon', [outrage
 pokelist = [bulbasaur, charmander, squirtle, pidgeot, rattata, pikachu, jigglypuff, abra, snorlax, dragonite]
 
 def get_effectiveness(att: Attack, pkm_def: Pokemon):
+    '''
+    This calculates the effectiveness of a given move on a defending pokemon
+    '''
     att_indx = pkm_tipos.index(att.tipo)
     def_indx = pkm_tipos.index(pkm_def.tipo)
     effect = ef_arr[att_indx][def_indx]
@@ -86,6 +89,10 @@ def get_effectiveness(att: Attack, pkm_def: Pokemon):
     return effect
 
 def calculate_dmg(att: Attack, pkm_att: Pokemon, pkm_def: Pokemon):
+    '''
+    This calculates the damage of a given attacking move from an attacking pokemon
+    to the respective defending pokemon based on Gen I damage formula
+    '''
     dmg = ((2*50/5) + 2) * att.damage 
 
     if att.pores == 0:
