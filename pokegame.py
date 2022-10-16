@@ -2,11 +2,38 @@
 This is the main python file where the logic and practice for the fight simulator lives.
 
 '''
+from curses import def_prog_mode
 from attack import Attack
 from pokemon import Pokemon
 import random
 import copy
+import numpy as np
 
+# Type effectiveness chart/array
+pkm_tipos = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
+                 "Fighting", "Poison", "Ground", "Flying", "Psychic",
+                 "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy"]
+
+# A 2 Dimenstional Numpy Array Of Damage Multipliers For Attacking Pokemon:
+
+ef_arr = np.array([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1/2, 0, 1, 1, 1/2, 1],
+                    [1, 1/2, 1/2, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1/2, 1, 1/2, 1, 2, 1],
+                    [1, 2, 1/2, 1, 1/2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1/2, 1, 1, 1],
+                    [1, 1, 2, 1/2, 1/2, 1, 1, 1, 0, 2, 1, 1, 1, 1, 1/2, 1, 1, 1],
+                    [1, 1/2, 2, 1, 1/2, 1, 1, 1/2, 2, 1/2, 1, 1/2, 2, 1, 1/2, 1, 1/2, 1],
+                    [1, 1/2, 1/2, 1, 2, 1/2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 1/2, 1],
+                    [2, 1, 1, 1, 1, 2, 1, 1/2, 1, 1/2, 1/2, 1/2, 2, 0, 1, 2, 2, 1/2],
+                    [1, 1, 1, 1, 2, 1, 1, 1/2, 1/2, 1, 1, 1, 1/2, 1/2, 1, 1, 0, 2],
+                    [1, 2, 1, 2, 1/2, 1, 1, 2, 1, 0, 1, 1/2, 2, 1, 1, 1, 2, 1],
+                    [1, 1, 1, 1/2, 2, 1, 2, 1, 1, 1, 1, 2, 1/2, 1, 1, 1, 1/2, 1],
+                    [1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1/2, 1, 1, 1, 1, 0, 1/2, 1],
+                    [1, 1/2, 1, 1, 2, 1, 1/2, 1/2, 1, 1/2, 2, 1, 1, 1/2, 1, 2, 1/2, 1/2],
+                    [1, 2, 1, 1, 1, 2, 1/2, 1, 1/2, 2, 1, 2, 1, 1, 1, 1, 1/2, 1],
+                    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1/2, 1, 1],
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1/2, 0],
+                    [1, 1, 1, 1, 1, 1, 1/2, 1, 1, 1, 2, 1, 1, 2, 1, 1/2, 1, 1/2],
+                    [1, 1/2, 1/2, 1/2, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1/2, 2],
+                    [1, 1/2, 1, 1, 1, 1, 2, 1/2, 1, 1, 1, 1, 1, 1, 2, 2, 1/2, 1]])
 
 # Create Attacks and Pokemon
 
@@ -35,18 +62,28 @@ extremespeed = Attack("Extreme speed", 80, "Normal", 0)
 dragontail = Attack("Dragon tail", 60, "Dragon", 0)
 outrage = Attack("Out rage" , 120, "Dragon", 0)
 
-bulbasaur = Pokemon('Bulbasaur', [105, 48, 48, 63, 63, 45], 'grass', [gigadrain, quickattack, drainpunch, magicleaf, tackle, gigaimpact])
-charmander = Pokemon('Charmander', [99, 51, 43, 58, 49, 63], 'fire', [firepunch, flamethrower, tackle, gigaimpact, assurance, dragontail])
-squirtle = Pokemon('Squirtle', [104, 47, 63, 49, 62, 43], 'water', [dive, quickattack, watergun, covet, icepunch])
-pidgeot = Pokemon('Pidgeot', [143, 76, 72, 67, 67, 86], 'flying', [quickattack, hurricane, wingattack, aerialace, pound])
-rattata = Pokemon('Rattata', [90, 54, 36, 27, 36, 69], 'normal', [quickattack, tackle, assurance, covet, extremespeed])
-pikachu = Pokemon('Pikachu', [95, 54, 31, 49, 40, 85], 'electric',[thunderpunch,quickattack,outrage,hurricane,megakick,magicleaf,disarmingvoice])
-jigglypuff = Pokemon('Jigglypuff', [175, 45, 22, 45, 27, 22], 'normal',[tackle,assurance,flamethrower,quickattack,hurricane,tackle])
-abra = Pokemon('Abra', [85, 22, 18, 99, 54, 85], 'psychic',[disarmingvoice,assurance,tackle,wingattack,quickattack,lick])
-snorlax = Pokemon('Snorlax', [220, 103, 63, 63, 103, 31 ], 'normal', [pound,covet,tackle,megakick,gigaimpact,hurricane,outrage])
-dragonite = Pokemon('Dragonite', [151, 125, 90, 94, 94, 76 ], 'dragon', [outrage,gigaimpact,pound,covet,dragontail,magicleaf])
+bulbasaur = Pokemon('Bulbasaur', [105, 48, 48, 63, 63, 45], 'Grass', [gigadrain, quickattack, drainpunch, magicleaf, tackle, gigaimpact])
+charmander = Pokemon('Charmander', [99, 51, 43, 58, 49, 63], 'Fire', [firepunch, flamethrower, tackle, gigaimpact, assurance, dragontail])
+squirtle = Pokemon('Squirtle', [104, 47, 63, 49, 62, 43], 'Water', [dive, quickattack, watergun, covet, icepunch])
+pidgeot = Pokemon('Pidgeot', [143, 76, 72, 67, 67, 86], 'Flying', [quickattack, hurricane, wingattack, aerialace, pound])
+rattata = Pokemon('Rattata', [90, 54, 36, 27, 36, 69], 'Normal', [quickattack, tackle, assurance, covet, extremespeed])
+pikachu = Pokemon('Pikachu', [95, 54, 31, 49, 40, 85], 'Electric',[thunderpunch,quickattack,outrage,hurricane,megakick,magicleaf,disarmingvoice])
+jigglypuff = Pokemon('Jigglypuff', [175, 45, 22, 45, 27, 22], 'Normal',[tackle,assurance,flamethrower,quickattack,hurricane,tackle])
+abra = Pokemon('Abra', [85, 22, 18, 99, 54, 85], 'Psychic',[disarmingvoice,assurance,tackle,wingattack,quickattack,lick])
+snorlax = Pokemon('Snorlax', [220, 103, 63, 63, 103, 31 ], 'Normal', [pound,covet,tackle,megakick,gigaimpact,hurricane,outrage])
+dragonite = Pokemon('Dragonite', [151, 125, 90, 94, 94, 76 ], 'Dragon', [outrage,gigaimpact,pound,covet,dragontail,magicleaf])
 
 pokelist = [bulbasaur, charmander, squirtle, pidgeot, rattata, pikachu, jigglypuff, abra, snorlax, dragonite]
+
+def get_effectiveness(att: Attack, pkm_def: Pokemon):
+    att_indx = pkm_tipos.index(att.tipo)
+    def_indx = pkm_tipos.index(pkm_def.tipo)
+    effect = ef_arr[att_indx][def_indx]
+    if effect == 2:
+        print(att.name + " is super effective against " + pkm_def.name +"!")
+    if effect == 1/2:
+        print(att.name + " is not very effective against " + pkm_def.name)
+    return effect
 
 def calculate_dmg(att: Attack, pkm_att: Pokemon, pkm_def: Pokemon):
     dmg = ((2*50/5) + 2) * att.damage 
@@ -60,6 +97,7 @@ def calculate_dmg(att: Attack, pkm_att: Pokemon, pkm_def: Pokemon):
     if att.tipo.lower() == pkm_att.tipo.lower():
         dmg = dmg * 1.5
 
+    dmg = dmg * get_effectiveness(att, pkm_def)
     dmg = dmg * random.randrange(217, 255) /255
     return int(dmg)
 
@@ -124,34 +162,38 @@ if __name__ == '__main__':
                     break
 
         if pkm0.stats[5] > pkm1.stats[5]:
-            # damage = ...
-            # pkm1.hp -= damage
+            print("\n"+pkm0.name + " hit " + pkm1.name + " with " + att0.name)
             dmg0 = calculate_dmg(att0, pkm0, pkm1)
             pkm1.hp -= dmg0
             if pkm1.hp <= 0:
                 break
+            print(pkm1.name +  " hit " + pkm0.name + " with " + att1.name)
             dmg1 = calculate_dmg(att1, pkm1, pkm0)
             pkm0.hp -= dmg1
+
         else:
+            print("\n"+ pkm1.name +  " hit " + pkm0.name + " with " + att1.name)
             dmg1 = calculate_dmg(att1, pkm1, pkm0)
             pkm0.hp -= dmg1
             if pkm0.hp <= 0:
                 break
+            print(pkm0.name + " hit " + pkm1.name + " with " + att0.name)
             dmg0 = calculate_dmg(att0, pkm0, pkm1)
             pkm1.hp -= dmg0
 
         if pkm0.hp >0 and pkm1.hp > 0:
-            print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp))
-            print(pkm1.name + " has remaining HP: " + str(pkm1.hp))
+            print("\n"+pkm0.name + " has remaining HP: " + str(pkm0.hp) + "/" +str(pkm0.stats[0]))
+            print(pkm1.name + " has remaining HP: " + str(pkm1.hp)+ "/" +str(pkm1.stats[0]))
             print("_________________________________________________")
             print("\n"+pkm0.name + " has the following moves:")
-            print([i.name for i in pkm0.moveset])
+            print([(i.name, i.tipo, i.damage) for i in pkm0.moveset])
             print(pkm1.name + " has the following moves:")
-            print([i.name for i in pkm1.moveset])
-
+            print([(i.name, i.tipo, i.damage) for i in pkm1.moveset])
 
 
     if pkm0.hp < 0:
+        print("\n"+pkm0.name + " has fainted!")
         print("Winner is " + pkm1.name + "!")
     else:
+        print("\n"+pkm1.name + " has fainted!")
         print("Winner is " + pkm0.name + "!")
