@@ -137,7 +137,7 @@ if __name__ == '__main__':
         pkm0.moveset.append(pkm0.allmoves.pop(rand_idx))
 
     print("\n"+pkm0.name + " has the following moves:")
-    print([(i.name, i.damage) for i in pkm0.moveset])
+    print([(i.name, i.tipo, i.damage) for i in pkm0.moveset])
         
 
     for i in range(4):
@@ -145,7 +145,7 @@ if __name__ == '__main__':
         pkm1.moveset.append(pkm1.allmoves.pop(rand_idx))
 
     print(pkm1.name + " has the following moves:")
-    print([(i.name, i.damage) for i in pkm1.moveset])
+    print([(i.name, i.tipo, i.damage) for i in pkm1.moveset])
 
     while pkm0.hp > 0 and pkm1.hp > 0:
         # player1 picks attack
