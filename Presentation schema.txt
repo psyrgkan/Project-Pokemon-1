@@ -10,10 +10,10 @@ Demo (ONE MINUTE
 Description of our game: describe the game we built in general words without too much detail about the coding :
             two playeres -> they pick pkm -> with randome moves -> make them fight until one of their HP is 0 so we have a winner
 
-Challenges: - how define the classes of pkm and attacks and relating betweem both of them deepcopy
-            - be able to choose the same pkm
+Challenges: - how define the classes of pkm and attacks and relating betweem both of them 
+            - be able to choose the same pkm (deepcopy)
             - how to acces the pkm name
             - the damage formula which take into account all the stats of the pkm and the attack bc if not the game was to short and direct.....
 
-       
+
 
