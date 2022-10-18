@@ -1,20 +1,13 @@
-'''
-This is where the code for the attack class lives.
-'''
-
 class Attack:
+    """The class with Attack information
 
-    """ Class attacks take into account:
+    Attributes:
 
-     name: str, the name of the attack
-
-     damage: takes in int  
-
-     tipo: takes in a str
-
-     pores: takes a int where pores = 0 if it's physical or pores = 1 if it's special  """
-
-
+        name (str): Name of the attack
+        damage (int): Damage of the attack
+        tipo (str): Type of the attack
+        pores (int): pores = 0 if attack is physical or pores = 1 if it is special  
+    """
     def __init__(self, name: str, damage : int , tipo : str , pores : int):
         self.name = name
         self.damage = damage
